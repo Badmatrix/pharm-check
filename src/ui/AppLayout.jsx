@@ -4,10 +4,12 @@ import Header from "./Header";
 
 export default function AppLayout() {
   return (
-    <div className="">
-      <Header />
-      <div className="grid grid-cols-4 bg-background">
+    <div className="flex">
+      <div className="w-[15%] ">
         <SideBar />
+      </div>
+      <div className="flex flex-col w-[85%] bg-background">
+      <Header />
         <Outlet />
       </div>
     </div>
