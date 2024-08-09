@@ -5,7 +5,7 @@ import Logo from "../assets/logo.png";
 import Doctor from "../assets/doctor.jpg";
 
 const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const [activeSubMenu, setActiveSubMenu] = useState(null);
 
   const toggleSidebar = () => {
