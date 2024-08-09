@@ -5,9 +5,10 @@ import Header from "./Header";
 export default function AppLayout() {
   return (
     <div className="">
-      <Header />
+      
       <div className="grid grid-cols-4 bg-background">
         <SideBar />
+        <Header />
         <Outlet />
       </div>
     </div>
