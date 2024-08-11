@@ -16,7 +16,10 @@ export default {
           200: "#007bff",
         },
       },
+      
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar'),
+  ],
 };
