@@ -19,7 +19,7 @@ export default function Header() {
     
     {/* logo */}
     <div className="lg:hidden ">
-        <div className=" text-white text-xl ">
+        <div className=" text-white text-lg ">
         <span className="uppercase font-semibold ">med</span>
         jestic
         </div>
