@@ -4,7 +4,7 @@ import Header from "../ui/Header";
 import { useState } from "react";
 
 export default function AppLayout() {
-  const [isOpenToggle, setIsOpenToggle] = useState(false);
+  const [isOpenToggle, setIsOpenToggle] = useState(true);
  const toggleSidebar = () => {
    setIsOpenToggle(!isOpenToggle);
  };
@@ -16,7 +16,7 @@ export default function AppLayout() {
       <Header isOpenToggle={isOpenToggle} toggleSidebar={toggleSidebar} />
       <SideBar isOpenToggle={isOpenToggle} toggleSidebar={toggleSidebar} />
       <main className=" overflow-scroll overflow-x-hidden">
-        <div className=" px-3">
+        <div className="">
           <Outlet />
         </div>
       </main>

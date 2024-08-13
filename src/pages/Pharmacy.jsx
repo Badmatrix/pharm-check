@@ -1,21 +1,25 @@
-import { useQuery } from "@tanstack/react-query";
-import { getPharmacy } from "../service/getPharmcyApi";
-import { useEffect } from "react";
+import { useDrugs } from "../hooks/useDrugs";
 import PharmacyItem from "../components/PharmacyItem";
 
 export default function Pharmacy() {
-  const { data: pharmacy } = useQuery({
-    queryKey: ["pharmacy"],
-    queryFn: getPharmacy,
-  });
+  const { data: pharmacy, isLoading, isError } = useDrugs();
   console.log(pharmacy);
 
   return (
-    <main className=" col-span-3">
-      <ul>
-        {pharmacy?.map((item) => (
-          <PharmacyItem key={item.id} item={item} />
-        ))}
+    <main className=" col-span-3 text-grayDark">
+      <ul className=" ">
+        <main role="table ">
+          <div className="grid grid-cols-10 gap-5 font-bold text-xl capitalize py-2 bg-grayDark/5 px-5">
+            <div className="col-span-1"></div>
+            <div className="col-span-3">name</div>
+            <div className="col-span-5">description</div>
+          </div>
+          <div className="px-5 ">
+            {pharmacy?.map((item) => (
+              <PharmacyItem key={item.id} item={item} />
+            ))}
+          </div>
+        </main>
       </ul>
     </main>
   );
