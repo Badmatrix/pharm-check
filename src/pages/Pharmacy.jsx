@@ -1,10 +1,11 @@
 import { useDrugs } from "../hooks/useDrugs";
 import PharmacyItem from "../components/PharmacyItem";
+import Loading from "../components/Loading";
 
 export default function Pharmacy() {
   const { data: pharmacy, isLoading, isError } = useDrugs();
   console.log(pharmacy);
-
+if(isLoading) return <Loading/>
   return (
     <main className=" col-span-3 text-grayDark">
       <ul className=" ">
