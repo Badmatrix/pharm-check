@@ -8,7 +8,7 @@ import { SlBell } from "react-icons/sl";
 export default function Header() {
   const[open,setOpen]=useState(false)
   return ( 
-< div className='h-24 bg-blue-500 w-full flex items-center justify-between px-6  relative'>
+< div className='h-24 bg-primary-200 w-full flex items-center justify-between px-6  relative'>
 
     {/* start */}
     <div className="   group cursor-pointer">

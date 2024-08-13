@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaSuitcaseMedical } from "react-icons/fa6";
 import {
   FaTachometerAlt,
   FaUserMd,
@@ -27,6 +28,13 @@ const Sidebar = ({ isOpenToggle, toggleSidebar }) => {
       name: "Dashboard",
       icon: <FaTachometerAlt />, // Dashboard icon
       subItems: [{ name: "Dashboard", path: "/dashboard" }],
+      // subItems: [{ name: "Pharmacy", path: "/pharmacy" }],
+    },
+    {
+      name: "Pharmacy",
+      icon: <FaSuitcaseMedical />, // pharmacy icon
+
+      subItems: [{ name: "Pharmacy", path: "/pharmacy" }],
     },
     {
       name: "Doctor",
@@ -123,9 +131,8 @@ const Sidebar = ({ isOpenToggle, toggleSidebar }) => {
       }`}
     >
       {/* Sidebar Toggle Button */}
-      
 
-      <div className={`  `}>
+      <div className="">
         <div className="py-4 h-full flex flex-col overflow-y-auto scrollbar-thin scrollbar-thumb-grayDark scrollbar-track-primary-100">
           <h2 className="text-lg w-32 mx-auto">
             <img src={Logo} alt="Logo" />

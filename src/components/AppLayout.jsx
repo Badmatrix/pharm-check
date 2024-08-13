@@ -13,7 +13,7 @@ export default function AppLayout() {
     <div
       className={`h-screen  ${isOpenToggle ? "grid grid-cols-[14rem,1fr] grid-rows-[auto,1fr]" : ""}`}
     >
-      {/* <Header isOpenToggle={isOpenToggle} toggleSidebar={toggleSidebar} /> */}
+      <Header isOpenToggle={isOpenToggle} toggleSidebar={toggleSidebar} />
       <SideBar isOpenToggle={isOpenToggle} toggleSidebar={toggleSidebar} />
       <main className=" overflow-scroll overflow-x-hidden">
         <div className="">
