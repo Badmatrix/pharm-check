@@ -18,12 +18,16 @@ import Doctor from "../assets/doctor.jpg";
 import SidebarNavItem from "./SidebarNavItem";
 
 const Sidebar = ({ isOpenToggle, toggleSidebar }) => {
-  const [activeSubMenu, setActiveSubMenu] = useState(null);
+  // const [activeSubMenu, setActiveSubMenu] = useState(null);
 
-  const toggleSubMenu = (index) => {
-    setActiveSubMenu(activeSubMenu === index ? null : index);
-  };
+  // const toggleSubMenu = (index) => {
+  //   setActiveSubMenu(index );
+  //   setActiveSubMenu(null)
+  // };
+  const[open,setOpen]=useState(false)
+  const[activeIndex,setActiveIndex]=useState(null)
   const navItems = [
+    
     {
       name: "Dashboard",
       icon: <FaTachometerAlt />, // Dashboard icon
@@ -126,9 +130,9 @@ const Sidebar = ({ isOpenToggle, toggleSidebar }) => {
 
   return (
     <div
-      className={`row-span-full shadow-sm shadow-grayDark bg-primary-200 inset-0  transition-transform duration-300 ease-in-out transform  ${
-        isOpenToggle ? "translate-x-0  lg:block" : "-translate-x-full hidden"
-      }`}
+      className={`row-span-full shadow-sm shadow-grayDark bg-primary-200 inset-0  transition-transform duration-300 ease-in-out transform  
+          lg:block  hidden
+      `}
     >
       {/* Sidebar Toggle Button */}
 
@@ -145,17 +149,19 @@ const Sidebar = ({ isOpenToggle, toggleSidebar }) => {
 
           {/* Navigation */}
           <nav className="flex-grow mx-0 mt-4">
-            <ul className="space-y-2">
+            <div className="space-y-2">
               {navItems.map((item, index) => (
                 <SidebarNavItem
                   key={index}
                   index={index}
                   item={item}
-                  activeSubMenu={activeSubMenu}
-                  toggleSubMenu={toggleSubMenu}
+                  setOpen={setOpen}
+                  open={open}
+                  activeIndex={activeIndex}
+                  setActiveIndex={setActiveIndex}
                 />
               ))}
-            </ul>
+            </div>
           </nav>
         </div>
       </div>
