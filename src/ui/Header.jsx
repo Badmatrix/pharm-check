@@ -5,13 +5,13 @@ import { IoCalendarOutline } from "react-icons/io5";
 import { SlBell } from "react-icons/sl";
 
 
-export default function Header() {
+export default function Header({toggleSidebar}) {
   const[open,setOpen]=useState(false)
   return ( 
 < div className='h-24 bg-blue-500 w-full flex items-center justify-between px-6  relative'>
 
     {/* start */}
-    <div className="   group cursor-pointer">
+    <div className="   group cursor-pointer" onClick={toggleSidebar}>
       <div className="w-[30px] rounded-[1px] h-[3px] bg-white mb-[3px] " />
       <div className="w-[20px] rounded-[1px] h-[3px] bg-white group-hover:w-[30px] transition-all duration-300  mb-[3px]" />
       <div className="w-[10px] rounded-[1px] h-[3px] bg-white group-hover:w-[30px] transition-all duration-200" />
