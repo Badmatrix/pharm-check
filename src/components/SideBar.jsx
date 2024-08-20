@@ -130,10 +130,13 @@ const Sidebar = ({ isOpenToggle, toggleSidebar }) => {
 
   return (
     <div
-      className={`row-span-full shadow-sm shadow-grayDark bg-primary-200 inset-0  transition-transform duration-300 ease-in-out transform  
-          lg:block  hidden
-      `}
-    >
+
+      className={`row-span-full shadow-sm shadow-grayDark bg-primary-100 inset-0  transition-transform duration-300 ease-in-out transform ${
+        isOpenToggle ? "translate-x-0" : "-translate-x-full hidden"
+      }`}
+     
+
+   / >
       {/* Sidebar Toggle Button */}
 
       <div className="">
