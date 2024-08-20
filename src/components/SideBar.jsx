@@ -17,13 +17,8 @@ import Logo from "../assets/logo.png";
 import Doctor from "../assets/doctor.jpg";
 import SidebarNavItem from "./SidebarNavItem";
 
-const Sidebar = ({ isOpenToggle, toggleSidebar }) => {
-  // const [activeSubMenu, setActiveSubMenu] = useState(null);
+const Sidebar = () => {
 
-  // const toggleSubMenu = (index) => {
-  //   setActiveSubMenu(index );
-  //   setActiveSubMenu(null)
-  // };
   const[open,setOpen]=useState(false)
   const[activeIndex,setActiveIndex]=useState(null)
   const navItems = [
@@ -130,8 +125,8 @@ const Sidebar = ({ isOpenToggle, toggleSidebar }) => {
 
   return (
     <div
-      className={`row-span-full shadow-sm shadow-grayDark bg-primary-200 inset-0  transition-transform duration-300 ease-in-out transform  
-          lg:block  hidden
+      className={`row-span-full shadow-sm w-full shadow-grayDark bg-primary-200 inset-0  transition-all duration-300 ease-in-out   
+        
       `}
     >
       {/* Sidebar Toggle Button */}

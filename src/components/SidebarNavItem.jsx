@@ -40,7 +40,7 @@ export default function SidebarNavItem({ item, index, setOpen, open, activeIndex
         </span>
 
         <span>
-          {open && activeIndex === index ? <FaChevronUp /> : <FaChevronDown />}
+          {open && activeIndex === index ? <FaChevronUp />  : <FaChevronDown />}
         </span>
       </button>
 
