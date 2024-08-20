@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaSuitcaseMedical } from "react-icons/fa6";
 import {
   FaTachometerAlt,
   FaUserMd,
@@ -17,16 +18,27 @@ import Doctor from "../assets/doctor.jpg";
 import SidebarNavItem from "./SidebarNavItem";
 
 const Sidebar = ({ isOpenToggle, toggleSidebar }) => {
-  const [activeSubMenu, setActiveSubMenu] = useState(null);
+  // const [activeSubMenu, setActiveSubMenu] = useState(null);
 
-  const toggleSubMenu = (index) => {
-    setActiveSubMenu(activeSubMenu === index ? null : index);
-  };
+  // const toggleSubMenu = (index) => {
+  //   setActiveSubMenu(index );
+  //   setActiveSubMenu(null)
+  // };
+  const[open,setOpen]=useState(false)
+  const[activeIndex,setActiveIndex]=useState(null)
   const navItems = [
+    
     {
       name: "Dashboard",
       icon: <FaTachometerAlt />, // Dashboard icon
       subItems: [{ name: "Dashboard", path: "/dashboard" }],
+      // subItems: [{ name: "Pharmacy", path: "/pharmacy" }],
+    },
+    {
+      name: "Pharmacy",
+      icon: <FaSuitcaseMedical />, // pharmacy icon
+
+      subItems: [{ name: "Pharmacy", path: "/pharmacy" }],
     },
     {
       name: "Doctor",
@@ -118,14 +130,16 @@ const Sidebar = ({ isOpenToggle, toggleSidebar }) => {
 
   return (
     <div
+
       className={`row-span-full shadow-sm shadow-grayDark bg-primary-100 inset-0  transition-transform duration-300 ease-in-out transform ${
         isOpenToggle ? "translate-x-0" : "-translate-x-full hidden"
       }`}
-    >
-      {/* Sidebar Toggle Button */}
-      
+     
 
-      <div className={`  `}>
+   / >
+      {/* Sidebar Toggle Button */}
+
+      <div className="">
         <div className="py-4 h-full flex flex-col overflow-y-auto scrollbar-thin scrollbar-thumb-grayDark scrollbar-track-primary-100">
           <h2 className="text-lg w-32 mx-auto">
             <img src={Logo} alt="Logo" />
@@ -138,17 +152,19 @@ const Sidebar = ({ isOpenToggle, toggleSidebar }) => {
 
           {/* Navigation */}
           <nav className="flex-grow mx-0 mt-4">
-            <ul className="space-y-2">
+            <div className="space-y-2">
               {navItems.map((item, index) => (
                 <SidebarNavItem
                   key={index}
                   index={index}
                   item={item}
-                  activeSubMenu={activeSubMenu}
-                  toggleSubMenu={toggleSubMenu}
+                  setOpen={setOpen}
+                  open={open}
+                  activeIndex={activeIndex}
+                  setActiveIndex={setActiveIndex}
                 />
               ))}
-            </ul>
+            </div>
           </nav>
         </div>
       </div>
